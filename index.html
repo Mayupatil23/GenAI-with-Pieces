@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #fact-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 600px;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div id="fact-container">
+        <p id="fact-text">Click the button to get a butterfly fact!</p>
+    </div>
+    <button id="fact-button">Get Fact</button>
+
+    <script>
+        const facts = [
+            "Butterflies are insects that belong to the order Lepidoptera, which also includes moths.",
+            "They undergo complete metamorphosis, with four distinct life stages: egg, larva (caterpillar), pupa (chrysalis), and adult.",
+            "Butterflies have four wings covered in tiny scales, which give them their vibrant colors and patterns.",
+            "They primarily feed on nectar from flowers using their long, straw-like proboscis.",
+            "Many butterfly species migrate long distances each year to find suitable breeding grounds and food sources.",
+            "Butterflies taste with their feet, using sensory receptors to identify host plants for their eggs and nectar sources.",
+            "They are cold-blooded (ectothermic) and rely on external heat sources to regulate their body temperature.",
+            "Butterflies play a crucial role in pollination, contributing to the reproduction of many flowering plants.",
+            "Some butterfly species exhibit camouflage or mimicry to protect themselves from predators.",
+            "The lifespan of a butterfly varies widely, from a few weeks to many months depending on the species."
+        ];
+
+        const factText = document.getElementById('fact-text');
+        const factButton = document.getElementById('fact-button');
+
+        factButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factText.textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
